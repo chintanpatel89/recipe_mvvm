@@ -51,5 +51,9 @@ class MainActivity : AppCompatActivity() {
             imm.hideSoftInputFromWindow(it.windowToken, 0)
             mealViewModel.getMeal(binding.etCountryName.text.toString())
         }
+
+        mealAdapter.onItemClick = {meal ->
+            Toast.makeText(this, ""+meal.strMeal, Toast.LENGTH_LONG).show()
+        }
     }
 }
